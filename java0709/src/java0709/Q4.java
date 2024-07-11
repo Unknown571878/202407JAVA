@@ -3,8 +3,7 @@ package java0709;
 import java.util.Scanner;
 
 public class Q4 {
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		System.out.print("첫번째 값을 입력하시오: ");
 		Scanner sc = new Scanner(System.in);
 		int a = sc.nextInt();
@@ -14,16 +13,16 @@ public class Q4 {
 		System.out.print("세번째 값을 입력하시오: ");
 		Scanner sc3 = new Scanner(System.in);
 		int c = sc3.nextInt();
-		if (a>b) {
-			if(a>c) {
+		if (a > b) {
+			if (a > c) {
 				System.out.printf("가장 큰 숫자는 %d입니다", a);
-			}else {
+			} else {
 				System.out.printf("가장 큰 숫자는 %d입니다", c);
 			}
-		}else {
-			if(b>c) {
+		} else {
+			if (b > c) {
 				System.out.printf("가장 큰 숫자는 %d입니다", b);
-			}else {
+			} else {
 				System.out.printf("가장 큰 숫자는 %d입니다", c);
 			}
 		}
