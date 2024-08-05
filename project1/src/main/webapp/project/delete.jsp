@@ -1,8 +1,11 @@
+<%@page import="project1.UserBoardDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%
-//    session.invalidate(); // 세션 모두 삭제
-session.removeAttribute("login_name"); // 일부 삭제
+    String num = request.getParameter("num");
+    UserBoardDAO dao = new UserBoardDAO();
+    dao.DeleteBoard(num);
+    response.sendRedirect("main.jsp");
     %>
 <!DOCTYPE html>
 <html>

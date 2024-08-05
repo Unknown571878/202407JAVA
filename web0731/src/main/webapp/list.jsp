@@ -7,6 +7,7 @@
 	<%
 		BoardDAO dao = new BoardDAO();
 		List<BoardDTO> list = dao.getBoardList();
+		String userNum = (String) session.getAttribute("userNum");
     %>
 <!DOCTYPE html>
 <html>
@@ -62,20 +63,26 @@ a:hover {
 			<th class="title">제목</th>
 			<th class="writer">작성자</th>
 			<th class="regtime">작성일시</th>
-			<th>조회수</th>
 		</tr>
 		<%
 		for (BoardDTO dto : list){
+			int i = 1;
+			System.out.println(userNum);
     %>
 		<tr>
-			<td><%=dto.getNum() %></td>
+			<td><%=i %></td>
 			<td style="text-align: left;"><a href="view.jsp?num=<%=dto.getNum() %>"><%=dto.getTitle() %></a>
 			</td>
 			<td><%=dto.getWriter() %></td>
 			<td><%=dto.getRegtime() %></td>
-			<td><%=dto.getHits() %></td>
+			<%
+			if(dto.getWriter().equals(session.getAttribute("userNum"))){%>
+				<td><input type="button" value="글쓰기" onclick="location.href='write.jsp'"></td>
+			<%}
+			%>
 		</tr>
 		<%
+		i++;
     }
     %>
 
