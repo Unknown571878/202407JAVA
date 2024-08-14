@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: web0813_fileUp
+Bundle-SymbolicName: web0813_fileUp
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-22
+Automatic-Module-Name: web0813.fileUp
+Export-Package: mybatis,
+ mybatis.config,
+ mybatis.sql,
+ webhard
