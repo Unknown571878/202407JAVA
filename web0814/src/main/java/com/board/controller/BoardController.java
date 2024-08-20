@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.board.db.*;
+import com.board.db.BoardDto;
 import com.board.service.BoardService;
 
 @WebServlet("/")

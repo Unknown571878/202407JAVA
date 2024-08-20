@@ -2,7 +2,10 @@ package com.board.service;
 
 import java.util.ArrayList;
 
-import com.board.db.*;
+import com.board.db.BoardDao;
+import com.board.db.BoardDto;
+import com.board.db.Pagination;
+
 
 public class BoardService {
 
