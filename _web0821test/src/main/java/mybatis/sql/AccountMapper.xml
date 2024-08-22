@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="AccountMapper">
+	<insert id="insertAccount" parameterType="com.board.db.AccountDTO">
+		insert into account(usernum, id, pw, name, nickname, adr)
+		values(SEQ_USERNUM.nextval, #{id}, #{pw}, #{name}, #{nickname}, #{adr})
+	</insert>
+	
+	<delete id="deleteAccount" parameterType="int">
+		DELETE FROM account WHERE usernum = #{usernum}
+	</delete>
+	
+	<select id="loginAccount" parameterType="com.board.db.AccountDTO" resultType="com.board.db.AccountDTO">
+	select * from account
+	where id = #{id} and pw = #{pw}
+	</select>
+	
+	<select id="accountInfo" parameterType="int" resultType="com.board.db.AccountDTO">
+	select * from account
+	where usernum = #{usernum}
+	</select>
+	
+	<update id="updateAccount" parameterType="com.board.db.AccountDTO">
+	update account set id = #{id}, pw = #{pw}, name = #{name}, nickname = #{nickname}, adr = #{adr}
+	where usernum = #{usernum}
+	</update>
+</mapper>
